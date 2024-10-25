@@ -1,7 +1,7 @@
 import NavbarLogo from "../assets/logo.png";
-const Footer = () => {
+const Footer=()=>{
   return (
-    <div className="bg-[#06091A] p-5 md:p-10">
+    <div className="bg-[#06091A] px-5 pb-5 md:pb-10 pt-32">
       <div className="flex items-center justify-center md:mb-10">
         <img className="w-20 md:w-28" src={NavbarLogo} alt="" />
       </div>

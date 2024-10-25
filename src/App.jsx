@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import NewsLetter from "./components/NewsLetter";
 import { useState } from "react"
 
 function App(){
@@ -15,7 +16,10 @@ function App(){
       <section className="container mx-auto">
         <Navbar credits={credits}/>
         <Header handleCreditButton={handleCreditButton}/>
-        <Footer/>
+        <div className="relative mt-64">
+          <NewsLetter/>
+          <Footer/>
+        </div>
       </section>
     </>
   )
