@@ -63,7 +63,7 @@ const Navbar=({credits})=>{
               </li>
             </ul>
           </div>
-          <a className="btn font-semibold">$0 Coin<img width="24" height="24" src="https://img.icons8.com/fluency/48/cheap-2--v1.png" alt="cheap-2--v1"/></a>
+          <a className="btn font-semibold">${credits} Coin<img width="24" height="24" src="https://img.icons8.com/fluency/48/cheap-2--v1.png" alt="cheap-2--v1"/></a>
         </div>
       </div>
     </div>
