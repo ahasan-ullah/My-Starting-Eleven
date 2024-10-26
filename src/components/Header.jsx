@@ -36,8 +36,8 @@ const Header=({handleCreditButton})=>{
             <p className="mb-5 text-[#FFFFFFB3] text-base md:text-xl lg:text-2xl">Beyond Boundaries Beyond Limits
             </p>
           </div>
-          <div className="inline-block p-2 border-2 rounded-2xl border-[#E7FE29]">
-            <button onClick={()=>{handleAlert();handleCreditButton()}} className="btn bg-[#E7FE29] text-black border-none rounded-2xl">Claim Free Credit</button>
+          <div className="inline-block p-2 border-2 rounded-2xl border-white">
+            <button onClick={()=>{handleAlert();handleCreditButton()}} className="btn bg-gradient-to-r from-indigo-300 via-orange-300 to-pink-300 text-black border-none rounded-2xl">Claim Free Credit</button>
           </div>
         </div>
       </div>

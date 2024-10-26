@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import AvailablePlayers from "./AvailablePlayers";
 import SelectedPlayers from "./SelectedPlayers";
 
-const Main=({handleMainSection,active,handleChooseButton,selectedPlayers,handleDeleteButton,handleCreditAdd})=>{
+const Main=({handleMainSection,active,handleChooseButton,selectedPlayers,handleDeleteButton,handleCreditAdd,credits})=>{
   return(
     <div className="mt-10">
       {/* header */}
@@ -14,7 +14,7 @@ const Main=({handleMainSection,active,handleChooseButton,selectedPlayers,handleD
       </div>
       {/* sections */}
       {
-        active?<AvailablePlayers handleChooseButton={handleChooseButton} handleCreditAdd={handleCreditAdd}/>:<SelectedPlayers selectedPlayers={selectedPlayers} handleDeleteButton={handleDeleteButton}/>
+        active?<AvailablePlayers handleChooseButton={handleChooseButton} handleCreditAdd={handleCreditAdd} credits={credits}/>:<SelectedPlayers selectedPlayers={selectedPlayers} handleDeleteButton={handleDeleteButton} handleMainSection={handleMainSection}/>
       }
     </div>
   );
@@ -27,6 +27,7 @@ Main.propTypes={
   selectedPlayers: PropTypes.array.isRequired,
   handleDeleteButton: PropTypes.func.isRequired,
   handleCreditAdd: PropTypes.func.isRequired,
+  credits: PropTypes.number.isRequired,
 }
 
 export default Main;

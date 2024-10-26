@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const AvailablePlayer=({player,handleChooseButton,handleCreditAdd})=>{
-  const handleAlert=()=>{
-    toast.success(`Congrates!! ${player.name} is now in your team`,{
+const AvailablePlayer=({player,handleChooseButton,credits})=>{
+  const handleError=()=>{
+    toast.error('Not enough money to buy this player. Claim some credit', {
       position: "top-center",
       autoClose: 3000,
       hideProgressBar: false,
@@ -40,7 +40,17 @@ const AvailablePlayer=({player,handleChooseButton,handleCreditAdd})=>{
           <div className="flex justify-between">
             <h2 className="card-title text-sm">Price: ${player.biddingPrice}</h2>
             <div>
-              <a onClick={()=>{handleAlert();handleChooseButton(player);handleCreditAdd(player.biddingPrice)}} className="p-2 border cursor-pointer text-sm rounded-lg block hover:bg-[#E7FE29]">Choose Player</a>
+              <a onClick={()=>{
+                if(player.biddingPrice<=credits){
+                  
+                  handleChooseButton(player);
+                  
+                }
+                else if(player.biddingPrice>credits){
+                  handleError();
+                }
+              }
+              } className="p-2 border cursor-pointer text-sm rounded-lg block hover:bg-[#E7FE29]">Choose Player</a>
             </div>
           </div>
         </div>
@@ -52,7 +62,8 @@ const AvailablePlayer=({player,handleChooseButton,handleCreditAdd})=>{
 AvailablePlayer.propTypes = {
   player: PropTypes.object.isRequired,
   handleChooseButton: PropTypes.func.isRequired,
-  handleCreditAdd: PropTypes.func.isRequired
+  handleCreditAdd: PropTypes.func.isRequired,
+  credits: PropTypes.number.isRequired,
 };
 
 export default AvailablePlayer;
