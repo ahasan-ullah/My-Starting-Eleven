@@ -17,7 +17,7 @@ function App(){
   };
 
   const handleError=()=>{
-    toast.error('layer already selected', {
+    toast.error('Player already selected', {
       position: "top-center",
       autoClose: 3000,
       hideProgressBar: false,
