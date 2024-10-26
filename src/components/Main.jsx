@@ -2,20 +2,19 @@ import PropTypes from "prop-types";
 import AvailablePlayers from "./AvailablePlayers";
 import SelectedPlayers from "./SelectedPlayers";
 
-const Main=({handleMainSection,active})=>{
+const Main=({handleMainSection,active,handleChooseButton,selectedPlayers,handleDeleteButton,handleCreditAdd})=>{
   return(
     <div className="mt-10">
       {/* header */}
-      <div className="flex justify-between items-center mb-5">
-        <h1 className="font-bold text-2xl">Available Players</h1>
+      <div className="flex justify-end items-center mb-5">
         <div className="space-x-4">
           <button onClick={()=>handleMainSection('available')} className={active?"btn active":"btn"}>Available</button>
-          <button onClick={()=>handleMainSection('selected')} className={active?"btn":"btn active"}>Selected(0)</button>
+          <button onClick={()=>handleMainSection('selected')} className={active?"btn":"btn active"}>Selected({selectedPlayers.length})</button>
         </div>
       </div>
       {/* sections */}
       {
-        active?<AvailablePlayers/>:<SelectedPlayers/>
+        active?<AvailablePlayers handleChooseButton={handleChooseButton} handleCreditAdd={handleCreditAdd}/>:<SelectedPlayers selectedPlayers={selectedPlayers} handleDeleteButton={handleDeleteButton}/>
       }
     </div>
   );
@@ -24,6 +23,10 @@ const Main=({handleMainSection,active})=>{
 Main.propTypes={
   handleMainSection: PropTypes.func.isRequired,
   active: PropTypes.bool.isRequired,
+  handleChooseButton: PropTypes.func.isRequired,
+  selectedPlayers: PropTypes.array.isRequired,
+  handleDeleteButton: PropTypes.func.isRequired,
+  handleCreditAdd: PropTypes.func.isRequired,
 }
 
 export default Main;

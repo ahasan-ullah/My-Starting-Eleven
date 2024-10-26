@@ -1,6 +1,20 @@
 import PropTypes from "prop-types";
+import {toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const AvailablePlayer=({player})=>{
+const AvailablePlayer=({player,handleChooseButton,handleCreditAdd})=>{
+  const handleAlert=()=>{
+    toast.success(`Congrates!! ${player.name} is now in your team`,{
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  };
   return(
     <div className="card w-80 md:w-96 border">
       <figure className="p-10">
@@ -25,7 +39,9 @@ const AvailablePlayer=({player})=>{
           </div>
           <div className="flex justify-between">
             <h2 className="card-title text-sm">Price: ${player.biddingPrice}</h2>
-            <a className="p-2 border cursor-pointer text-sm rounded-lg block">Choose Player</a>
+            <div>
+              <a onClick={()=>{handleAlert();handleChooseButton(player);handleCreditAdd(player.biddingPrice)}} className="p-2 border cursor-pointer text-sm rounded-lg block hover:bg-[#E7FE29]">Choose Player</a>
+            </div>
           </div>
         </div>
       </div>
@@ -35,6 +51,8 @@ const AvailablePlayer=({player})=>{
 
 AvailablePlayer.propTypes = {
   player: PropTypes.object.isRequired,
+  handleChooseButton: PropTypes.func.isRequired,
+  handleCreditAdd: PropTypes.func.isRequired
 };
 
 export default AvailablePlayer;

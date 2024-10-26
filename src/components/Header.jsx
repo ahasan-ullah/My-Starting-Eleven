@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 import Banner from '../assets/bg-shadow.png'
 import BannerLogo from '../assets/banner-main.png'
-import { ToastContainer, toast } from 'react-toastify';
+import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Header=({handleCreditButton})=>{
   const handleAlert=()=>{
-    toast();
     toast.success('Credit Added to your Account',{
       position: "top-center",
       autoClose: 3000,
@@ -38,8 +37,7 @@ const Header=({handleCreditButton})=>{
             </p>
           </div>
           <div className="inline-block p-2 border-2 rounded-2xl border-[#E7FE29]">
-            <button onClick={()=>{handleAlert(),handleCreditButton()}} className="btn bg-[#E7FE29] text-black border-none rounded-2xl">Claim Free Credit</button>
-            <ToastContainer/>
+            <button onClick={()=>{handleAlert();handleCreditButton()}} className="btn bg-[#E7FE29] text-black border-none rounded-2xl">Claim Free Credit</button>
           </div>
         </div>
       </div>
