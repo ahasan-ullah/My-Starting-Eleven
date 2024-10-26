@@ -15,3 +15,4 @@ This is a **Squad Builder Platform** for cricket where you can build your dream 
  - Use of useEffect
 
 ## Live Link
+- https://my-starting-eleven.netlify.app/
