@@ -1,8 +1,17 @@
-# React + Vite
+# Dream XI - My Starting Eleven
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a **Squad Builder Platform** for cricket where you can build your dream cricket squad.
 
-Currently, two official plugins are available:
+## Technology Used
+ - React
+ - Javascript
+ - NPM
+ - React Toastify
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
+ - Responsive
+ - Fetch data from API
+ - Use of useState
+ - Use of useEffect
+
+## Live Link
