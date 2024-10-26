@@ -6,3 +6,8 @@
 .sora-font {
   font-family: "Sora", sans-serif;
 }
+
+.active{
+  background: #E7FE29;
+  color: black;
+}

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Logo from '../assets/logo.png';
 const Navbar=({credits})=>{
   return (
-    <div className="sticky top-0 bg-white/50">
+    <div className="sticky top-0 bg-white/50 z-10">
       <div className="navbar mb-3 md:mb-5">
         {/* Navbar */}
         {/* left part */}
